@@ -1,0 +1,130 @@
+/* 노트북 화면에서 가로로 잘리는 문제 수정 */
+/* 이 파일의 내용을 기존 css/reset.css 맨 아래에 추가하세요. */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+/* main.css에 지정된 1920px 고정 너비 해제 */
+#end .in_end,
+.in_end {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto;
+}
+
+#end {
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    overflow: hidden;
+}
+
+#end .in_end img {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* 이미지와 영상이 화면 너비를 넘지 않도록 조정 */
+#project_2,
+#project_2 .in_project_2,
+#project_2 .project_wrap,
+#project_2 .project_image {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#project_2 .project_image img {
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+}
+
+.video_box {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.video_box video {
+    display: block;
+    width: min(600px, 100%) !important;
+    max-width: 100%;
+    margin-top: 120px;
+    height: auto;
+}
+
+/* 프로젝트 카드 영역의 좌우 여백과 고정 너비 해제 */
+#project_1 .project_wrap {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto !important;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+#project_1 .project_grid {
+    width: 100%;
+    margin: 0 !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1200px) {
+    #project_1 .project_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #profile .profile_card {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    }
+
+    #skill .skill_list {
+        gap: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    #project_1 .project_grid {
+        grid-template-columns: 1fr;
+    }
+
+    #project_1 .project_intro {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #profile .profile_card,
+    #profile .profile_right {
+        grid-template-columns: 1fr;
+    }
+
+    #main .header {
+        padding: 0 16px;
+    }
+
+    #main .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    #skill .in_skill {
+        height: auto;
+        min-height: 700px;
+    }
+}
