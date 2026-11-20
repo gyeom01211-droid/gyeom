@@ -1,0 +1,496 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "맑은고딕";
+    font-size: 12px;
+    color:#333;
+}
+
+ul,li{
+    list-style: none;
+}
+
+img{border:0}
+
+a{text-decoration: none;}
+/* 전체 화면 크기 조절 */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* 프로필 크기 조절 */
+#profile .profile_card {
+    grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+}
+
+/* 스킬 영역 */
+#skill .in_skill {
+    width: 100%;
+    padding: 100px 30px;
+}
+
+#skill .skill_list {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+#skill .skill_list > li {
+    float: none;
+    margin-right: 0;
+}
+
+/* 프로젝트 영역 */
+#project_1 .in_project_1 {
+    width: 100%;
+    padding: 100px 30px;
+}
+
+#project_1 .project_wrap {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+#project_1 .project_intro h2 {
+    margin-left: 0;
+}
+
+#project_1 .project_grid {
+    width: 100%;
+    margin: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* 노트북 화면 */
+@media (max-width: 1600px) {
+    #profile .profile_card {
+        grid-template-columns: 35% minmax(0, 1fr);
+        gap: 20px;
+        padding: 25px;
+    }
+
+    #project_1 .project_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #project_1 .project_intro {
+        flex-wrap: wrap;
+    }
+
+    .title {
+        font-size: 36px;
+    position: absolute;
+    top: 70px;
+    left: 146px;
+    font-weight: 700;
+    }
+}
+
+/* 작은 화면 */
+@media (max-width: 768px) {
+    #profile .profile_card {
+        grid-template-columns: 1fr;
+    }
+
+    #profile .profile_right {
+        grid-template-columns: 1fr;
+    }
+
+    #project_1 .project_grid {
+        grid-template-columns: 1fr;
+    }
+
+    #main .nav {
+        gap: 12px;
+        margin-right: 10px;
+        flex-wrap: wrap;
+    }
+
+    #main .nav a {
+        font-size: 16px;
+    }
+
+    .video_box video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* ==================================================
+   반응형 보정 - PC / 노트북 / 태블릿
+   기존 디자인은 유지하고 고정 너비와 좌우 넘침을 보정합니다.
+   ================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: clip;
+}
+
+#wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+/* 메인 메뉴 */
+#main .header {
+    width: 100%;
+    padding-left: clamp(20px, 3vw, 50px);
+    padding-right: clamp(20px, 3vw, 50px);
+}
+
+#main .nav {
+    max-width: 100%;
+    gap: clamp(12px, 1.8vw, 30px);
+}
+
+#main .nav a {
+    white-space: nowrap;
+}
+
+/* 프로필 */
+#profile .in_profile {
+    width: min(1500px, calc(100% - 48px));
+}
+
+#profile .profile_card {
+    width: 100%;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(18px, 2.5vw, 40px);
+}
+
+#profile .profile_right {
+    min-width: 0;
+}
+
+#profile .profile_section {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* 스킬 */
+#skill .in_skill {
+    min-height: 919px;
+    height: auto;
+}
+
+#skill .skill_list {
+    max-width: 100%;
+}
+
+/* 프로젝트 1 - 기존의 큰 좌우 여백과 오른쪽 밀림 제거 */
+#project_1 .in_project_1 {
+    width: 100%;
+    padding-left: clamp(24px, 5vw, 80px);
+    padding-right: clamp(24px, 5vw, 80px);
+}
+
+#project_1 .project_wrap {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    min-width: 0;
+}
+
+#project_1 .project_intro {
+    width: 100%;
+}
+
+#project_1 .project_intro h2 {
+    margin-left: 0;
+}
+
+#project_1 .project_grid {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#project_1 .project_card {
+    min-width: 0;
+}
+
+#project_1 .project_content {
+    min-width: 0;
+}
+
+#project_1 .project_content p,
+#project_1 .project_meta span {
+    overflow-wrap: anywhere;
+}
+
+/* 프로젝트 2 이미지 */
+#project_2 .project_wrap,
+#project_2 .project_image {
+    width: 100%;
+    max-width: 100%;
+}
+
+#project_2 .project_image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* 영상 */
+.video_box {
+    width: 100%;
+    padding: 24px;
+}
+
+.video_box video {
+    display: block;
+    width: min(800px, 100%);
+    height: auto;
+}
+
+/* 팝업 안 이미지 */
+.needpopup img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 일반 노트북 */
+@media (max-width: 1600px) {
+    #profile .profile_card {
+        grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+        gap: 24px;
+        padding: 28px;
+    }
+
+    #profile .profile_section {
+        padding: 22px 18px;
+    }
+
+    #profile .profile_section p {
+        font-size: 14px;
+    }
+
+    #project_1 .project_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    #project_1 .in_project_1 {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+/* 작은 노트북 / 태블릿 가로 */
+@media (max-width: 1200px) {
+    #main .header {
+        justify-content: center;
+    }
+
+    #main .nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    #main .nav a {
+        font-size: 15px;
+    }
+
+    #profile .in_profile {
+        width: calc(100% - 40px);
+    }
+
+    #profile .profile_card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #profile .profile_left {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        align-items: stretch;
+    }
+
+    #profile .photo_box {
+        height: 300px;
+    }
+
+    #profile .profile_right {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #skill .in_skill {
+        padding: 100px 24px;
+    }
+
+    #skill h3 {
+        left: 24px;
+    }
+}
+
+/* 태블릿 이하 */
+@media (max-width: 768px) {
+    #main .header {
+        height: auto;
+        min-height: 90px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    #main .nav {
+        gap: 10px 14px;
+    }
+
+    #main .nav a {
+        font-size: 14px;
+    }
+
+    #main .hero_content {
+        margin-top: 60px;
+        padding: 0 24px;
+    }
+
+    #main h2,
+    #main p {
+        text-align: center;
+    }
+
+    #profile .in_profile {
+        width: calc(100% - 28px);
+        padding: 24px 0;
+    }
+
+    #profile .profile_card {
+        padding: 18px;
+        gap: 20px;
+    }
+
+    #profile .profile_left {
+        display: flex;
+    }
+
+    #profile .photo_box {
+        height: 280px;
+    }
+
+    #profile .profile_right {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #profile .basic_info {
+        padding: 18px;
+    }
+
+    #profile .basic_info p {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+    #profile .basic_info strong {
+        width: 82px;
+    }
+
+    #skill .in_skill {
+        min-height: 0;
+        padding: 100px 20px 60px;
+    }
+
+    #skill h3 {
+        top: 30px;
+        left: 20px;
+        font-size: 30px;
+    }
+
+    #skill .skill_list {
+        gap: 28px;
+    }
+
+    #project_1 .in_project_1 {
+        padding: 70px 18px;
+    }
+
+    #project_1 .project_intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    #project_1 .project_intro h2 {
+        font-size: 30px;
+    }
+
+    #project_1 .project_grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .title {
+        position: static;
+        display: block;
+        padding: 28px 20px 0;
+        font-size: 26px;
+    }
+
+    .video_box {
+        height: auto;
+        min-height: 55vh;
+        padding: 20px;
+    }
+
+    #q_mn {
+        display: none;
+    }
+}
+
+/* 아주 작은 모바일 */
+@media (max-width: 480px) {
+    #main .nav a {
+        font-size: 13px;
+    }
+
+    #profile .profile_card {
+        padding: 14px;
+    }
+
+    #profile .profile_section {
+        padding: 18px;
+    }
+
+    #project_1 .project_content {
+        padding: 22px 18px;
+    }
+
+    #skill .skill_list {
+        gap: 20px;
+    }
+}
